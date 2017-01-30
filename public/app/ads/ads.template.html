@@ -1,23 +1,35 @@
 <new-ad></new-ad>
-<h1>Ads</h1>
-
-<form>
-  <fieldset>
-    <legend>Filter By:</legend>
-    <input name="filter" ng-model="$ctrl.filter" type="text">
-  </fieldset>
-  <br>
-  <fieldset>
-    <legend>Order By</legend>
-    <input ng-click="$ctrl.changeOrder('-created_at')" type="radio" name="order" value="-created_at" checked> Date Posted<br>
-    <input ng-click="$ctrl.changeOrder('price')" type="radio" name="order" value="price"> Price
-  </fieldset>
-  <br>
-  <fieldset>
-    <legend>Sort Order</legend>
-    <input ng-click="$ctrl.reverseOrder(false)" type="radio" name="reverse" value="true" checked> Ascending<br>
-    <input ng-click="$ctrl.reverseOrder(true)" type="radio" name="reverse" value="false"> Descending
-  </fieldset>
+<hr>
+<form class="pure-form">
+  <div class="pure-g">
+    <div class="pure-u-1-4"></div>
+    <div class="pure-u-1-2">
+      <h2>Sorting Options</h2>
+      <fieldset>
+        <legend>Filter By Specific Text</legend>
+        <input class="pure-input-1" name="filter" ng-model="$ctrl.filter" type="text">
+      </fieldset>
+    </div>
+  </div>
+  <div class="pure-g">
+    <div class="pure-u-1-4"></div>
+    <div class="pure-u-1-4">
+      <fieldset>
+        <legend>Order By</legend>
+        <label class="pure-radio">
+      <input ng-click="$ctrl.changeOrder('-created_at')" type="radio" name="order" value="-created_at" checked> Date Posted<br>
+      <input ng-click="$ctrl.changeOrder('price')" type="radio" name="order" value="price"> Price
+    </label>
+      </fieldset>
+    </div>
+    <div class="pure-u-1-4">
+      <fieldset>
+        <legend>Sort Order</legend>
+        <input ng-click="$ctrl.reverseOrder(false)" type="radio" name="reverse" value="true" checked> Ascending<br>
+        <input ng-click="$ctrl.reverseOrder(true)" type="radio" name="reverse" value="false"> Descending
+      </fieldset>
+    </div>
+  </div>
 </form>
 
 <div ng-repeat="ad in $ctrl.ads | filter:$ctrl.filter | orderBy:$ctrl.orderBy : $ctrl.reverse">
