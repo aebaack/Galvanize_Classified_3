@@ -33,5 +33,11 @@
 </form>
 
 <div ng-repeat="ad in $ctrl.ads | filter:$ctrl.filter | orderBy:$ctrl.orderBy : $ctrl.reverse">
-  <ad ad-data="ad"></ad>
+  <div class="pure-g centered-text">
+    <div class="pure-u-1-4"></div>
+    <div class="pure-u-1-2">
+      <ad ad-data="ad"></ad>
+    </div>
+  </div>
+  <hr>
 </div>
