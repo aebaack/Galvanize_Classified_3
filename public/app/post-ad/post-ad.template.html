@@ -1,16 +1,32 @@
-<h1>Post New Ad</h1>
-<form ng-submit="$ctrl.submitNewAd($event)">
-  <label for="title">Title: </label>
-  <input name="title" ng-model="$ctrl.newAd.title" type="text"></input>
-  <br>
-  <label for="price">Price: </label>
-  <input name="price" ng-model="$ctrl.newAd.price" type="number"></input>
-  <br>
-  <label for="description">Description: </label>
-  <input name="description" ng-model="$ctrl.newAd.description"></input>
-  <br>
-  <label for="image">Image: </label>
-  <input name="image" ng-model="$ctrl.newAd.item_image"></input>
-  <br>
-  <button type="submit">Submit Ad</button>
-</form>
+<div class="centered-text">
+  <h1>Get Started by Creating a New Ad</h1>
+  <button class="pure-button pure-button-primary" ng-click="$ctrl.toggleNewPostVisibility()">
+    <span ng-if="!$ctrl.newPostIsVisible">New Ad</span>
+    <span ng-if="$ctrl.newPostIsVisible">Hide Ad</span>
+  </button>
+  <div class="pure-g">
+    <!-- pure does not come packaged with the ability to offset the grid -->
+    <div class="pure-u-1-4"></div>
+    <div class="pure-u-1-2">
+      <form ng-if="$ctrl.newPostIsVisible" class="pure-form pure-form-stacked" ng-submit="$ctrl.submitNewAd($event)">
+        <fieldset>
+          <legend>Create New Ad</legend>
+
+          <label for="title">Title</label>
+          <input class="pure-input-1" name="title" ng-model="$ctrl.newAd.title" type="text" required></input>
+
+          <label for="price">Price</label>
+          <input class="pure-input-1" name="price" ng-model="$ctrl.newAd.price" type="number" required></input>
+
+          <label for="description">Description</label>
+          <textarea class="pure-input-1" name="description" ng-model="$ctrl.newAd.description" type="text" required></textarea>
+
+          <label for="image">Image URL</label>
+          <input class="pure-input-1" name="image" ng-model="$ctrl.newAd.item_image" type="text" required></input>
+
+          <button type="submit" class="pure-button pure-button-primary">Submit Ad</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
