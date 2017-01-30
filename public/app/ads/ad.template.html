@@ -1,0 +1,29 @@
+<h1>{{$ctrl.adData.title}}</h1>
+<p><strong>{{$ctrl.adData.price | currency}}</strong></p>
+<img ng-src="{{$ctrl.adData.item_image}}"></img>
+<p>{{$ctrl.adData.description}}</p>
+Posted: <span am-time-ago="$ctrl.adData.created_at"></span>
+<br><br>
+
+<button ng-click="$ctrl.showEditForm()">Edit</button><br>
+<div ng-if="$ctrl.showEdit">
+  <form ng-submit="$ctrl.editAd($event)">
+    <label for="title">Title: </label>
+    <input name="title" ng-model="$ctrl.adEdits.title" type="text"></input>
+    <br>
+    <label for="price">Price: </label>
+    <input name="price" ng-model="$ctrl.adEdits.price" type="number"></input>
+    <br>
+    <label for="description">Description: </label>
+    <input name="description" ng-model="$ctrl.adEdits.description"></input>
+    <br>
+    <label for="image">Image: </label>
+    <input name="image" ng-model="$ctrl.adEdits.item_image"></input>
+    <br>
+    <button type="submit">Submit Changes</button>
+  </form>
+  <br>
+</div>
+<br>
+
+<button ng-click="$ctrl.deleteAd()">Delete</button>

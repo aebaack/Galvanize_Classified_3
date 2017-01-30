@@ -1,0 +1,16 @@
+<h1>Post New Ad</h1>
+<form ng-submit="$ctrl.submitNewAd($event)">
+  <label for="title">Title: </label>
+  <input name="title" ng-model="$ctrl.newAd.title" type="text"></input>
+  <br>
+  <label for="price">Price: </label>
+  <input name="price" ng-model="$ctrl.newAd.price" type="number"></input>
+  <br>
+  <label for="description">Description: </label>
+  <input name="description" ng-model="$ctrl.newAd.description"></input>
+  <br>
+  <label for="image">Image: </label>
+  <input name="image" ng-model="$ctrl.newAd.item_image"></input>
+  <br>
+  <button type="submit">Submit Ad</button>
+</form>

@@ -1,0 +1,25 @@
+<new-ad></new-ad>
+<h1>Ads</h1>
+
+<form>
+  <fieldset>
+    <legend>Filter By:</legend>
+    <input name="filter" ng-model="$ctrl.filter" type="text">
+  </fieldset>
+  <br>
+  <fieldset>
+    <legend>Order By</legend>
+    <input ng-click="$ctrl.changeOrder('-created_at')" type="radio" name="order" value="-created_at" checked> Date Posted<br>
+    <input ng-click="$ctrl.changeOrder('price')" type="radio" name="order" value="price"> Price
+  </fieldset>
+  <br>
+  <fieldset>
+    <legend>Sort Order</legend>
+    <input ng-click="$ctrl.reverseOrder(false)" type="radio" name="reverse" value="true" checked> Ascending<br>
+    <input ng-click="$ctrl.reverseOrder(true)" type="radio" name="reverse" value="false"> Descending
+  </fieldset>
+</form>
+
+<div ng-repeat="ad in $ctrl.ads | filter:$ctrl.filter | orderBy:$ctrl.orderBy : $ctrl.reverse">
+  <ad ad-data="ad"></ad>
+</div>
