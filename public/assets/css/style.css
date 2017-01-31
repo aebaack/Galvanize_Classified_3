@@ -36,3 +36,7 @@ header h1 {
 hr {
   width: 90%;
 }
+
+img.pure-img {
+  margin: auto;
+}
