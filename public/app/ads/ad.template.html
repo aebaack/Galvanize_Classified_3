@@ -1,7 +1,7 @@
 <section>
   <h1>{{$ctrl.adData.title}}</h1>
   <p><strong>{{$ctrl.adData.price | currency}}</strong></p>
-  <img ng-src="{{$ctrl.adData.item_image}}"></img>
+  <img class="pure-img" ng-src="{{$ctrl.adData.item_image}}"></img>
   <p>{{$ctrl.adData.description}}</p>
   Posted: <span am-time-ago="$ctrl.adData.created_at"></span>
   <br><br>
