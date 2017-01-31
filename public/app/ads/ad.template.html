@@ -1,14 +1,15 @@
-<h1>{{$ctrl.adData.title}}</h1>
-<p><strong>{{$ctrl.adData.price | currency}}</strong></p>
-<img ng-src="{{$ctrl.adData.item_image}}"></img>
-<p>{{$ctrl.adData.description}}</p>
-Posted: <span am-time-ago="$ctrl.adData.created_at"></span>
-<br><br>
+<section>
+  <h1>{{$ctrl.adData.title}}</h1>
+  <p><strong>{{$ctrl.adData.price | currency}}</strong></p>
+  <img ng-src="{{$ctrl.adData.item_image}}"></img>
+  <p>{{$ctrl.adData.description}}</p>
+  Posted: <span am-time-ago="$ctrl.adData.created_at"></span>
+  <br><br>
+  <button class="pure-button" ng-click="$ctrl.showEditForm()">Edit</button>
+  <button class="pure-button" ng-click="$ctrl.deleteAd()">Delete</button>
+</section>
 
-<button class="pure-button" ng-click="$ctrl.showEditForm()">Edit</button>
-<button class="pure-button" ng-click="$ctrl.deleteAd()">Delete</button>
-
-<div ng-if="$ctrl.showEdit">
+<section ng-if="$ctrl.showEdit">
   <form class="pure-form pure-form-stacked" ng-submit="$ctrl.editAd($event)">
     <fieldset>
       <legend>Edit Ad</legend>
@@ -34,5 +35,4 @@ Posted: <span am-time-ago="$ctrl.adData.created_at"></span>
       </div>
     </fieldset>
   </form>
-  <br>
-</div>
+</section>
