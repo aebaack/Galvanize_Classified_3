@@ -5,25 +5,34 @@
 Posted: <span am-time-ago="$ctrl.adData.created_at"></span>
 <br><br>
 
-<button ng-click="$ctrl.showEditForm()">Edit</button><br>
+<button class="pure-button" ng-click="$ctrl.showEditForm()">Edit</button>
+<button class="pure-button" ng-click="$ctrl.deleteAd()">Delete</button>
+
 <div ng-if="$ctrl.showEdit">
-  <form ng-submit="$ctrl.editAd($event)">
-    <label for="title">Title: </label>
-    <input name="title" ng-model="$ctrl.adEdits.title" type="text"></input>
-    <br>
-    <label for="price">Price: </label>
-    <input name="price" ng-model="$ctrl.adEdits.price" type="number"></input>
-    <br>
-    <label for="description">Description: </label>
-    <input name="description" ng-model="$ctrl.adEdits.description"></input>
-    <br>
-    <label for="image">Image: </label>
-    <input name="image" ng-model="$ctrl.adEdits.item_image"></input>
-    <br>
-    <button type="submit">Submit Changes</button>
+  <form class="pure-form pure-form-stacked" ng-submit="$ctrl.editAd($event)">
+    <fieldset>
+      <legend>Edit Ad</legend>
+      <div class="pure-g">
+        <div class="pure-u-11-24">
+          <label for="title">Title: </label>
+          <input class="pure-input-1" name="title" ng-model="$ctrl.adEdits.title" type="text"></input>
+        </div>
+        <div class="pure-u-1-12"></div>
+        <div class="pure-u-11-24">
+          <label for="price">Price: </label>
+          <input class="pure-input-1" name="price" ng-model="$ctrl.adEdits.price" type="number"></input>
+        </div>
+        <div class="pure-u-1">
+          <label for="image">Image: </label>
+          <input class="pure-input-1" name="image" ng-model="$ctrl.adEdits.item_image"></input>
+        </div>
+        <div class="pure-u-1">
+          <label for="description">Description: </label>
+          <textarea class="pure-input-1" name="description" ng-model="$ctrl.adEdits.description"></textarea>
+        </div>
+        <button class="centered-margin pure-button pure-button-primary" type="submit">Submit Changes</button>
+      </div>
+    </fieldset>
   </form>
   <br>
 </div>
-<br>
-
-<button ng-click="$ctrl.deleteAd()">Delete</button>

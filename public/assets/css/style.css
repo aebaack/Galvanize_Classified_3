@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.centered-margin {
+  margin: auto;
+}
+
 .centered-text form {
   font-size: 1.2em;
   text-align: left;
